@@ -54,7 +54,7 @@ class RideViewSet(viewsets.ModelViewSet):
 
         if serializer.is_valid():
             serializer.save()
-            best_driver.is_available = False  # Mark driver as busy
+            best_driver.is_available = False  
             best_driver.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
